@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberLearn</title>
+  <link rel="stylesheet" href="main.css">
+  <script>
+    function goToPage(page) {
+      window.location.href = page;
+    }
+  </script>
+</head>
+<body>
+  <div class="ring">
+    <i style="--clr:#f7f7f7;"></i>
+    <i style="--clr:#00a2ffa1;"></i>
+    <i style="--clr:#c744ff;"></i>
+    <div class="login">
+      <h1 class="gradient-title">CyberLearn</h1>
+      <div class="inputBx">
+        <input type="submit" value="Login" onclick="goToPage('login.html')">
+      </div>
+      <div class="inputBx">
+        <input type="button" value="Sign Up" onclick="goToPage('signup.html')">
+      </div>
+      <div class="inputBx">
+        <input type="button" value="Admin" onclick="goToPage('admin-login.html')">
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function openChat() {
+      document.getElementById('chatbot-modal').style.display = 'block';
+    }
+
+    function closeChat() {
+      document.getElementById('chatbot-modal').style.display = 'none';
+    }
+  </script>
+  
+
+<!-- Chatbot Icon -->
+<div class="chatbot-container">
+  <img src="phantom.jpeg" class="chatbot-icon" width="50" height="50" onclick="openChat()">
+</div>
+
+<!-- Chatbot Modal -->
+<div id="chatbot-modal" class="chatbot-modal">
+  <span class="close-btn" onclick="closeChat()">×</span>
+  <iframe src="chatbot.html"></iframe>
+</div>
+  
+
+</html>

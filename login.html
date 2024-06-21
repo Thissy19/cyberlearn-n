@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="login_validation.js"></script>
+</head>
+<body>
+  <div class="ring">
+    <i style="--clr:#f7f7f7;"></i>
+    <i style="--clr:#00a2ffa1;"></i>
+    <i style="--clr:#c744ff;"></i>
+    <div class="login">
+      <h2>Login</h2>
+      <form action="login.php" method="post" onsubmit="return validateLoginForm()">
+        <div class="inputBx">
+          <input type="text" name="username" placeholder="Username" required>
+        </div>
+        <div class="inputBx">
+          <input type="password" name="password" placeholder="Password" required>
+        </div>
+        <div class="inputBx">
+          <input type="submit" value="Sign in">
+        </div>
+        <div class="links">
+          <a href="forgot-password.html">Forgot Password</a>
+          <a href="signup.html">Sign Up</a> 
+          <a href="admin-login.html" class="admin-link">Admin Login</a>
+        </div>
+      </form>
+
+    </div>
+  </div>
+   
+    <script>
+      function openChat() {
+        document.getElementById('chatbot-modal').style.display = 'block';
+      }
+  
+      function closeChat() {
+        document.getElementById('chatbot-modal').style.display = 'none';
+      }
+    </script>
+  </head>
+  <body>
+    
+  
+  <!-- Chatbot Icon -->
+  <div class="chatbot-container">
+    <img src="phantom.jpeg" class="chatbot-icon" width="50" height="50" onclick="openChat()">
+  </div>
+
+  <!-- Chatbot Modal -->
+  <div id="chatbot-modal" class="chatbot-modal">
+    <span class="close-btn" onclick="closeChat()">×</span>
+    <iframe src="chatbot.html"></iframe>
+
+  
+</body>
+</html>

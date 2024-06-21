@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="validate_signup.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up</h1>
+        <form id="signup-form" action="signup.php" method="post" onsubmit="return validateSignup()">
+            <div class="input-field">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-field">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-field">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-field">
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+            </div>
+            <div class="checkbox-field">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the <a href="terms-and-conditions.html" target="_blank">terms and conditions</a>.</label>
+              </div>
+              <div class="inputBx">
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+    <script>
+        function openChat() {
+          document.getElementById('chatbot-modal').style.display = 'block';
+        }
+    
+        function closeChat() {
+          document.getElementById('chatbot-modal').style.display = 'none';
+        }
+      </script>
+    </head>
+    <body>
+      
+    
+    <!-- Chatbot Icon -->
+    <div class="chatbot-container">
+      <img src="phantom.jpeg" class="chatbot-icon" width="50" height="50" onclick="openChat()">
+    </div>
+  
+    <!-- Chatbot Modal -->
+    <div id="chatbot-modal" class="chatbot-modal">
+      <span class="close-btn" onclick="closeChat()">×</span>
+      <iframe src="chatbot.html"></iframe>
+  
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Results - Phishing Response Training</title>
+  <link rel="stylesheet" href="main.css">
+  <script>
+    function calculateResults() {
+      const correctAnswers = {
+        q1: "c",
+        q2: "b",
+        q3: "b",
+        q4: "b",
+        q5: "b"
+      };
+      let score = 0;
+      let totalQuestions = 5;
+      
+      for (let i = 1; i <= totalQuestions; i++) {
+        let userAnswer = localStorage.getItem("q" + i);
+        if (userAnswer === correctAnswers["q" + i]) {
+          score++;
+          document.getElementById("result-q" + i).innerHTML = "Question " + i + ": Correct";
+        } else {
+          document.getElementById("result-q" + i).innerHTML = "Question " + i + ": Incorrect";
+        }
+      }
+
+      document.getElementById("final-score").innerHTML = "You scored " + score + " out of " + totalQuestions;
+    }
+
+    window.onload = function() {
+      calculateResults();
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Quiz Results</h1>
+    <div class="content">
+      <p id="result-q1"></p>
+      <p id="result-q2"></p>
+      <p id="result-q3"></p>
+      <p id="result-q4"></p>
+      <p id="result-q5"></p>
+      <p id="final-score"></p>
+    </div>
+    <div class="navigation">
+      <a href="phishing-training-start.html" class="button">Retake Training</a>
+    </div>
+  </div>
+</body>
+</html>
